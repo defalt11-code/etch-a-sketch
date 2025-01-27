@@ -5,18 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etch a sketch</title>
   <link rel="stylesheet" href="style.css">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1>Etch-A-Sketch</h1>
-
-  <div class="btn-container">
-    <button class="create-grid">Create grid</button>
-    <button class="reset-grid">Reset grid</button>
-    <button class="random-color">Random color</button>
+  <div class="header">
+    <h1>Etch-A-Sketch</h1>
   </div>
 
-  <div class="container"></div>
+  <div class="main-container">
+    <div class="btn-container">
+      <button class="create-grid">Create grid</button>
+      <button class="reset-grid">Reset grid</button>
+      <button class="random-color">Random color</button>
+    </div>
+    <div class="container"></div>
+  </div>
+  
   <script src="etch-a-sketch.js"></script>
 
 </body>

@@ -13,7 +13,9 @@ resetGridBtn.addEventListener("click", () => {
   container.innerHTML = "";
 });
 
-
+randomColorBtn.addEventListener("click", () => {
+  randomColor();
+})
 
 const container = document.querySelector(".container");
 
@@ -33,22 +35,32 @@ function addGrid(gridCount) {
     grids.style.height = `${gridsSize}px`;
 
     grids.addEventListener("mouseover", () => {
-      grids.style.backgroundColor = "lightgrey";
+      if(!grids.dataset.opacity) {
+        grids.dataset.opacity = 0; // Initialize opacity for each grids
+      }
+      let currentOpacity = parseInt(grids.dataset.opacity);
+      if(currentOpacity < 100) {
+        grids.style.opacity = `${currentOpacity / 100}`;
+        grids.dataset.opacity = currentOpacity + 30;
+      }
+      grids.style.backgroundColor = "grey";
     });
 
     container.appendChild(grids)
   };
-
-  function randomColor() {
-    const grids = container.children;
-
-    for(let grid of grids) {
-      grid.addEventListener("mouseover", () => {
-
-      })
-    }
-  }
-
 };
+
+function randomColor() {
+  const grids = container.children;
+
+  for(let grid of grids) {
+    grid.addEventListener("mouseover", () => {
+      grid.style.backgroundColor = `
+        rgb(${Math.floor(Math.random() * 300)},
+        ${Math.floor(Math.random() * 300)},
+        ${Math.floor(Math.random() * 300)})`
+    })
+  }
+}
 
  
