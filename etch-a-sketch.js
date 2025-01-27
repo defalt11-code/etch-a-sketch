@@ -1,10 +1,15 @@
 /* Etch a sketch odin project */
 const createGridBtn = document.querySelector(".create-grid");
+const resetGridBtn = document.querySelector(".reset-grid");
 
 createGridBtn.addEventListener("click", () => {
   const gridCount = parseInt(prompt("Enter a grid up to 1 - 100"));
-  container.innerHTML = "" ;
+  container.innerHTML = "";
   addGrid(gridCount);
+});
+
+resetGridBtn.addEventListener("click", () => {
+  container.innerHTML = "";
 });
 
 const container = document.querySelector(".container");
@@ -15,7 +20,7 @@ function addGrid(gridCount) {
   };
 
   const gridsSize = 694 / gridCount;
-  console.log(gridsSize)
+  console.log(gridsSize);
 
   for(let i = 0; i < gridCount * gridCount; i++) {
     const grids = document.createElement("div");
@@ -26,10 +31,10 @@ function addGrid(gridCount) {
 
     grids.addEventListener("mouseover", () => {
       grids.style.backgroundColor = "lightgrey";
-    })
+    });
 
     container.appendChild(grids)
-  }
+  };
 
 };
 
