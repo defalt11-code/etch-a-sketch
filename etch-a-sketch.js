@@ -1,6 +1,7 @@
 /* Etch a sketch odin project */
 const createGridBtn = document.querySelector(".create-grid");
 const resetGridBtn = document.querySelector(".reset-grid");
+const randomColorBtn = document.querySelector(".random-color");
 
 createGridBtn.addEventListener("click", () => {
   const gridCount = parseInt(prompt("Enter a grid up to 1 - 100"));
@@ -11,6 +12,8 @@ createGridBtn.addEventListener("click", () => {
 resetGridBtn.addEventListener("click", () => {
   container.innerHTML = "";
 });
+
+
 
 const container = document.querySelector(".container");
 
@@ -35,6 +38,16 @@ function addGrid(gridCount) {
 
     container.appendChild(grids)
   };
+
+  function randomColor() {
+    const grids = container.children;
+
+    for(let grid of grids) {
+      grid.addEventListener("mouseover", () => {
+
+      })
+    }
+  }
 
 };
 
