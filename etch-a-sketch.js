@@ -28,6 +28,7 @@ const container = document.querySelector(".container");// container element refe
 /* functions */
 function addGrid(gridCount) {
   if(gridCount < 1 || gridCount > 100) {
+    alert("the value should be greater than 1 and less than 100!")
     return; // quit the addgrid function if gridcount is either greater or less than to 1 and 100
   };
 
